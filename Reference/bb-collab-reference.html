@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<!-- saved from url=(0080)https://us.bbcollab.com/collab/ui/session/guest/c46033437acc4436a8a9b106accdd2a1 -->
+
+<!-- IMPORTANT -->
+
+<input type="text" id="guest-name" name="guestName" ng-model="guestLaunch.guestName" ng-keypress="guestLaunch.guestNameKeyPress($event)" ng-focus="focused = true" ng-blur="focused = false" ng-class="{'ng-pattern-invalid': !guestLaunch.isValid()}" required="" bb-text-field-focus="focusselect" class="ng-pristine ng-valid ng-not-empty ng-valid-required ng-touched">
+
+<html bb-dir="" bb-lang="" class="js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths desktop landscape windows windows10 windows10_0 64bit chrome chrome84 chrome84_0 webkit en-us" style="--vw:3.75px; --vh:8.13px;" lang="en" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <h1 class="launch-title joining-session-title">
+      <span class="launch-title__subtitle ng-scope" bb-translate="" analytics-id="session.launch.joining-session-inline-title">Joining session</span>
+      <span class="launch-title__emphasis ng-binding">Class Time</span>
+    </h1>
+    <div id="guest-launch-form" class="launch-options">
+      <form name="guestnameform" novalidate="" class="ng-pristine ng-valid ng-valid-required">
+        <div class="floating-label has-value" ng-init="focused = false" ng-class="{
+               &#39;has-value&#39;: guestLaunch.guestName.length,
+               &#39;input-focused&#39;: focused
+             }">
+          <label for="guest-name" bb-translate="" class="ng-scope" analytics-id="session.launch.guest-name-input">Type your name to join the session as a guest:</label>
+          <input type="text" id="guest-name" name="guestName" ng-model="guestLaunch.guestName" ng-keypress="guestLaunch.guestNameKeyPress($event)" ng-focus="focused = true" ng-blur="focused = false" ng-class="{&#39;ng-pattern-invalid&#39;: !guestLaunch.isValid()}" required="" bb-text-field-focus="focusselect" class="ng-pristine ng-valid ng-not-empty ng-valid-required ng-touched">
+        </div>
+        <div class="form-element-errors ng-hide" ng-show="(!guestnameform.$pristine &amp;&amp; !guestLaunch.isValid())" aria-hidden="true">
+            <span ng-show="guestLaunch.errorType===&#39;empty&#39;" bb-translate="" class="ng-scope ng-hide" analytics-id="session.launch.failure.error-guestname-required.title">Provide a guest name</span>
+            <span ng-show="guestLaunch.errorType===&#39;invalid&#39;" bb-translate="" class="ng-scope ng-hide" analytics-id="session.launch.failure.error-guestname-invalid.title">Guest names can't contain hashtags ("#"). Please try again.</span>
+            <span ng-show="guestLaunch.errorType===&#39;long&#39;" bb-translate="" class="ng-scope ng-hide" analytics-id="session.launch.failure.error-guestname-long.title">Limit guest names to 128 characters</span>
+        </div>
+        <div role="alert" aria-live="assertive" class="sr-only">
+          <!-- ngIf: guestLaunch.errorType==='empty' -->
+          <!-- ngIf: guestLaunch.errorType==='invalid' -->
+          <!-- ngIf: guestLaunch.errorType==='long' -->
+        </div>
+      </form>
+      <button id="launch-html-guest" type="button" class="button button--inverse -outline expanded large ng-scope" ng-disabled="!guestLaunch.isValid()" ng-click="guestLaunch.guestNameProvided()" bb-translate="" analytics-id="session.launch.join">Join Session</button>
+    </div>
+    <div class="launch__footer" bb-launch-footer=""><div class="launch-footer">
+  <a href="https://www.blackboard.com/" target="_blank" class="copyright button-anchor -inverse ng-scope" translate-values="{year: launchFooter.getYear()}" bb-translate="" analytics-id="session.launch.link-text.copyright">© 1997-2020 Blackboard Inc. All Rights Reserved.</a>
+  <ul class="link-group">
+    <li class="link-group__item">
+      <a class="link-group__link button-anchor -inverse ng-scope" target="_blank" bb-translate-attrs="{href: &#39;session.launch.link-url.help&#39;}" bb-translate="" href="https://help.blackboard.com/002_000en_US" analytics-id="session.launch.link-text.help">Help</a>
+      <span class="link-group__divider" aria-hidden="true">|</span>
+    </li>
+    <li class="link-group__item">
+      <a class="link-group__link button-anchor -inverse ng-scope" target="_blank" bb-translate-attrs="{href: &#39;session.launch.link-url.privacy-policy&#39;}" bb-translate="" href="https://help.blackboard.com/1000en_US" analytics-id="session.launch.link-text.privacy-policy">Privacy Policy</a>
+      <span class="link-group__divider" aria-hidden="true">|</span>
+    </li>
+    <li class="link-group__item">
+      <a class="link-group__link button-anchor -inverse ng-scope" target="_blank" bb-translate-attrs="{href: &#39;session.launch.link-url.terms-of-use&#39;}" bb-translate="" href="https://help.blackboard.com/1001en_US" analytics-id="session.launch.link-text.terms-of-use">Terms of Use</a>
+    </li>
+  </ul>
+</div></div>
+  </div><!-- end ngIf: guestLaunch.state === 'nameentry' -->
+  <!-- ngIf: guestLaunch.state === 'launching' -->
+</div>
+</div>
+    <!-- uiView: notifications --><div class="notifications ng-scope" ui-view="notifications"></div>
+  </main>
+  <!-- uiView: controls --><div id="controls" ui-view="controls" class="ng-scope"></div>
+  <div bb-tech-check=""><div id="techcheck-modal" class="reveal frameless" data-reveal="" data-close-on-click="false" ng-class="[techCheck.getFullState(), techCheck.mode]" role="dialog" bb-trap-focus="" bb-modal-disconnect-close="" tabindex="-1">
+  <div bb-tech-check-permissions="" class="modal-content-wrap techcheck-permissions-wrapper ng-hide" ng-show="techCheck.step === &#39;permissions&#39;"><div class="techcheck-permissions">
+  <!-- WEBRTC Pending Permissions State -->
+  <!-- ngIf: techCheck.mode === 'webrtc' && techCheckPermissions.service.accessState === 'pending' -->
+
+  <!-- WEBRTC Failed Permissions State -->
+  <!-- ngIf: techCheck.mode === 'webrtc' && techCheckPermissions.service.accessState === 'failed' && techCheck.state !== 'loading' -->
+</div>
+</div>
+  <div bb-tech-check-audio="" class="modal-content-wrap techcheck-audio-wrapper ng-hide" ng-show="techCheck.step === &#39;audio&#39;"><div class="techcheck-audio">
+  <h3 id="dialog-title-audio" class="modal-title">
+    <span bb-translate="" class="ng-scope" analytics-id="techcheck.audio.header">Audio test</span>
+    <span class="subheader ng-scope" bb-translate="" analytics-id="techcheck.audio.step">(1 of 2)</span>
+  </h3>
+  <!-- ngIf: techCheck.step === 'audio' && techCheck.state === 'ready' -->
+</div>
+</div>
+  <div bb-tech-check-video="" class="modal-content-wrap techcheck-video-wrapper ng-hide" ng-show="techCheck.step === &#39;video&#39; || techCheck.step === &#39;crop&#39;"><div class="techcheck-video">
+  <!-- Headers -->
+  <h3 id="dialog-title-video" class="modal-title">
+    <!-- ngIf: techCheck.type === 'sharecontent' -->
+    <!-- ngIf: techCheck.type === 'sharevideo' -->
+    <!-- ngIf: techCheck.type === 'fullcheck' -->
+    <!-- ngIf: techCheck.type === 'snapshot' && techCheck.step === 'video' -->
+  </h3>
+  <h3 id="dialog-title-crop" class="modal-title">
+    <!-- ngIf: (techCheck.type === 'snapshot' || techCheck.type === 'crop') && techCheck.step === 'crop' -->
+  </h3>
+  <!-- Video content -->
+  <!-- ngIf: techCheck.step === 'video' && techCheck.state === 'ready' && techCheckVideo.isCamAvailable() -->
+
+  <!-- Image cropper -->
+  <!-- ngIf: (techCheck.type === 'snapshot' || techCheck.type === 'crop') && techCheck.step === 'crop' && techCheck.state === 'ready' -->
+
+  <!-- Error in accessing Camera  -->
+  <!-- ngIf: techCheck.step === 'video' && techCheck.state === 'ready' && techCheckVideo.cameraAccessError -->
+
+  <!-- No Camera State -->
+  <!-- ngIf: techCheck.step === 'video' && techCheck.state === 'ready' && !techCheckVideo.isCamAvailable() && !techCheckVideo.cameraAccessError -->
+</div>
+</div>
+  <div class="techcheck-loading ng-isolate-scope ng-hide" bb-progress-indicator="" spinner="true" ng-show="techCheck.state === &#39;loading&#39;"><div class="progress-circle processing" ng-class="progressIndicator.getStateClass()">
+  <!-- @TODO: text for aria-valuetext -->
+  <svg class="progress-circle-svg" viewBox="-10 -10 220 220" role="progressbar" aria-valuetext="" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" focusable="false" aria-hidden="true">
+    <path class="back" ng-attr-d="{{&#39;m100,0a100,100 0 0 1 0,200a100,100 0 0 1 0,-200&#39;}}" fill="transparent" d="m100,0a100,100 0 0 1 0,200a100,100 0 0 1 0,-200"></path>
+    <path class="bar" ng-attr-d="{{&#39;m100,0a100,100 0 0 1 0,200a100,100 0 0 1 0,-200&#39;}}" fill="transparent" stroke-dasharray="629" stroke-dashoffset="629" d="m100,0a100,100 0 0 1 0,200a100,100 0 0 1 0,-200"></path>
+  </svg>
+  <!-- ngIf: state === 'error' -->
+  <!-- ngIf: state === 'success' -->
+  <!-- ngIf: progressIndicator.alertSpinnerMode -->
+
+  <!-- ngIf: state === 'loading' -->
+</div>
+</div>
+  <button class="close" ng-click="techCheck.cancelTechCheck()">×</button>
+</div>
+</div>
+  <!-- ngIf: session.jinxConnected -->
+</div>
+<div bb-announcement-modal="" class="ng-scope"><div id="announcement-modal" tabindex="-1" role="dialog" data-reveal="" bb-modal-disconnect-close="" data-overlay="false" bb-trap-focus="">
+  <!-- ngIf: announcementModal.visible -->
+</div>
+</div>
+<div bb-tutorial-wrap="" class="ng-scope"><div id="tutorial-wrap" bb-trap-focus="" watch-scope="tutorialWrap.trapFocusActive" bb-translate-attrs="{&#39;aria-label&#39;: &#39;tutorial.label&#39;}" tabindex="-1" aria-label="Tutorial">
+  <!-- ngIf: tutorialWrap.visible -->
+</div>
+</div>
+</div>
+      <!-- runtime dependencies -->
+      <script src="./bb-collab-reference_files/runtime.js.download" type="text/javascript"></script>
+      <!-- long term cached files, served from /collab/js/[name]/[hash]/name.js -->
+      
+        <script src="./bb-collab-reference_files/angular.js.download" type="text/javascript"></script>
+      
+        <script src="./bb-collab-reference_files/emojiassets.js.download" type="text/javascript"></script>
+      
+        <script src="./bb-collab-reference_files/moment.js.download" type="text/javascript"></script>
+      
+        <script src="./bb-collab-reference_files/playback.js.download" type="text/javascript"></script>
+      
+        <script src="./bb-collab-reference_files/vendor.js.download" type="text/javascript"></script>
+      
+        <script src="./bb-collab-reference_files/whiteboard.js.download" type="text/javascript"></script>
+      
+      <!-- main app script -->
+      <script src="./bb-collab-reference_files/main.js.download" type="text/javascript"></script>
+      <div bb-error-alert-live=""><div id="error-alert-live" role="alert" aria-relevant="additions text" aria-atomic="false" class="sr-only"></div></div>
+    
+
+</body></html>
