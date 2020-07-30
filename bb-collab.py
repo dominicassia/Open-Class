@@ -9,8 +9,6 @@ def main():
 
     driver_path = 'C:\\Users\\Domin\\Github\\Python\\open-class\\Driver\\chromedriver.exe'
 
-    print(time.localtime())
-
     with webdriver.Chrome(driver_path) as driver:
 
         # Go to the webpage
@@ -27,26 +25,43 @@ def main():
 
         print('\n> Current time:\t', h, ':', m, ':', s, '\n')
 
-        
+        if h < 9:
 
+            sleepH =  9 - h 
+            sleepM =  25 - m 
+            sleepS = 60 - s
 
+            print('\tSleep: ', sleepH, ' hrs ', sleepM, ' min ', sleepS, ' sec \n' )
 
+            totalTime = ( 3600 * (sleepH)) + ( 60 * sleepM )  + sleepS
 
+            time.sleep( totalTime )
 
-        #     if 
+        elif h == 9 and m < 25:
+            
+            sleepM =  25 - m 
+            sleepS = 60 - s
 
-        #     # Enter a guest name
-        #     element = driver.find_element_by_id('guest-name')
+            print('\tSleep: ', sleepM, ' min ', sleepS, ' sec \n' )
 
-        #     element.send_keys('Dom A', Keys.Enter)
+            totalTime = ( 60 * sleepM )  + sleepS
 
-        #     # Sleep until 11:50am
-        #     time.sleep(8700)
+            time.sleep( totalTime )
 
+        elif h > 9:
 
+            exit()
 
-        
+        # Enter a guest name
+        element = driver.find_element_by_id('guest-name')
 
+        element.send_keys('Dom A', Keys.Enter)
+
+        # Sleep until 11:50am
+        time.sleep(8700)
+
+        driver.close()
+        exit()
 
 # Call main
 if __name__ == "__main__":
