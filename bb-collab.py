@@ -9,18 +9,45 @@ def main():
 
     driver_path = 'C:\\Users\\Domin\\Github\\Python\\open-class\\Driver\\chromedriver.exe'
 
-    try:
+    print(time.localtime())
 
-        with webdriver.Chrome(driver_path) as driver:
+    with webdriver.Chrome(driver_path) as driver:
 
-            driver.get(url)
+        # Go to the webpage
+        driver.get(url)
 
-    finally:
+        driver.maximize_window()
 
-        driver.close()
+        # Take the time
+        takeTime = time.localtime()
+
+        h = takeTime[3]
+        m = takeTime[4]
+        s = takeTime[5] 
+
+        print('\n> Current time:\t', h, ':', m, ':', s, '\n')
+
+        
+
+
+
+
+
+        #     if 
+
+        #     # Enter a guest name
+        #     element = driver.find_element_by_id('guest-name')
+
+        #     element.send_keys('Dom A', Keys.Enter)
+
+        #     # Sleep until 11:50am
+        #     time.sleep(8700)
+
+
 
         
 
 
 # Call main
-main()
+if __name__ == "__main__":
+    main()
