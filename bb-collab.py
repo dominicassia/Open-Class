@@ -1,5 +1,6 @@
 import time
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 
 def main():
 
@@ -21,44 +22,70 @@ def main():
 
         h = takeTime[3]
         m = takeTime[4]
-        s = takeTime[5] 
+        s = takeTime[5]
 
         print('\n> Current time:\t', h, ':', m, ':', s, '\n')
 
-        if h < 9:
+        if h == 8 and m > 20:
 
-            sleepH =  9 - h 
-            sleepM =  25 - m 
-            sleepS = 60 - s
-
-            print('\tSleep: ', sleepH, ' hrs ', sleepM, ' min ', sleepS, ' sec \n' )
-
-            totalTime = ( 3600 * (sleepH)) + ( 60 * sleepM )  + sleepS
-
-            time.sleep( totalTime )
-
-        elif h == 9 and m < 25:
-            
-            sleepM =  25 - m 
+            sleepM =  ( 60 - m ) + 20
             sleepS = 60 - s
 
             print('\tSleep: ', sleepM, ' min ', sleepS, ' sec \n' )
 
             totalTime = ( 60 * sleepM )  + sleepS
 
+            print('\tSec:', totalTime )
+
             time.sleep( totalTime )
+
+        elif h == 9 and m < 20:
+            
+            sleepM =  20 - m 
+            sleepS = 60 - s
+
+            print('\tSleep: ', sleepM, ' min ', sleepS, ' sec \n' )
+
+            totalTime = ( 60 * sleepM )  + sleepS
+
+            print('\tSec:', totalTime )
+
+            time.sleep( totalTime )
+
+            if h < 9:
+                
+                sleepH =  9 - h 
+                sleepM =  25 - m 
+                sleepS = 60 - s
+
+                # if m < 0:
+
+                #     sleepH -= 1
+                #     sleepM = -1 * ( m ) + 25
+
+                print('\tSleep: ', sleepH, ' hrs ', sleepM, ' min ', sleepS, ' sec \n' )
+
+                totalTime = ( 3600 * (sleepH)) + ( 60 * sleepM )  + sleepS
+
+                print('\tSec:', totalTime )
+
+                time.sleep( totalTime )
 
         elif h > 9:
 
             exit()
 
-        # Enter a guest name
-        element = driver.find_element_by_id('guest-name')
+        driver.refresh()
 
-        element.send_keys('Dom A', Keys.Enter)
+        # Enter a guest name
+        # element = driver.find_element_by_id('guest-name')
+        element = driver.find_element_by_name('guestName')
+        
+        element.send_keys('Dom A')
+        element.send_keys(Keys.RETURN)
 
         # Sleep until 11:50am
-        time.sleep(8700)
+        time.sleep(9100)
 
         driver.close()
         exit()
