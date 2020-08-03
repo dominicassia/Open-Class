@@ -1,6 +1,7 @@
 import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium import 
 
 def main():
 
@@ -71,19 +72,25 @@ def main():
 
                 time.sleep( totalTime )
 
-        elif h > 9:
+        # elif h > 9:
 
-            exit()
+        #     exit()
 
         driver.refresh()
 
         # Enter a guest name
         # element = driver.find_element_by_id('guest-name')
-        element = driver.find_element_by_name('guestName')
-        
-        element.send_keys('Dom A')
-        element.send_keys(Keys.RETURN)
+        try:
 
+            element = driver.find_element_by_id('guest-name')
+
+            element.send_keys('Dom A')
+            element.send_keys(Keys.RETURN)
+
+        except NoSuchElementException:
+
+            print('exception')
+            
         # Sleep until 11:50am
         time.sleep(9100)
 
