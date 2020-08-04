@@ -79,10 +79,8 @@ def main():
         driver.refresh()
 
         try:
-            element = driver.find_element_by_id('guest-name')
-
-            element.send_keys('Dom A')
-            element.send_keys(Keys.RETURN)
+            element = driver.find_element_by_id('input#guest-name')
+            print('found')
 
         except NoSuchElementException:
 
@@ -90,7 +88,6 @@ def main():
 
             try:
                 element = driver.find_element_by_name('guestName')
-
                 element.send_keys('Dom A')
                 element.send_keys(Keys.RETURN)
 
