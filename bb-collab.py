@@ -79,7 +79,7 @@ def main():
         driver.refresh()
 
         try:
-            element = driver.find_element_by_id('input#guest-name')
+            element = driver.find_element_by_id('guest-name')
             print('found')
 
         except NoSuchElementException:
